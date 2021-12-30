@@ -1,0 +1,27 @@
+¿Qué es una Clase?
+
+* Podemos decir que una clase es un molde, donde se define la estructura (ATRIBUTOS) 
+y comportamientos (MÉTODOS) que tendran los objetos.
+
+* Cada objeto que se crea se dice que es una instancia de la clase.
+* Cada objeto tiene su identidad y su estado (valor actual de sus atributos)
+
+EJEMPLO: clase Perro
+
+		ATRIBUTOS:
+					*Nombre
+					*Raza
+					*Edad
+					*Peso
+
+		COMPORTAMIENTO:
+					*Correr
+					*Ladrar
+					*Jugar
+					*Comer
+
+¿Qué es una Herencia?
+
+* Cuando una clase B extiende a una clase A. La clase B va a recibir TODOS los atributos y métodos no privados de A.
+* Los métodos heredaros se pueden sobre-escribir, i.e. modificar de acuerdo a la nueva clase A.
+* Una clase unicamente puede extender de una clase a la vez.
