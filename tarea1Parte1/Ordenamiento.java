@@ -30,7 +30,13 @@ public class Ordenamiento {
      * @param l La lista que se ordenara.
      */
 	public static <T extends Comparable<T>> void bubblesort(List<T> l) {
-		// Les toca
+		for(int i = 1; i < size(); i++) {
+			for(int j = 0; j < size() - i; j++) {
+				if(l.get[j] > l.get[j + 1]) {
+					intercambia(list, j, j+1);
+				}
+			}
+		}
 	}
 
 	/**
