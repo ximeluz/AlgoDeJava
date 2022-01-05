@@ -13,7 +13,7 @@ public class BubblesortList {
  	public static <T extends Comparable<T>> void bubblesortList(List<T> l) {
 		for(int i = 1; i < l.size(); i++) {
 			for(int j = 0; j < l.size() - i; j++) {
-				if(l.get(j) > l.get(j + 1)) {
+				if(l.get(j).compareTo(l.get(j + 1)) > 0) {
 					 intercambia(l, j, j+1);
                 }
             }
@@ -21,21 +21,12 @@ public class BubblesortList {
     }
 
 	public static void main(String[] args) {
-		LinkedList listaG = new LinkedList();
+		LinkedList<String> listaG = new LinkedList<String>();
 
    		 // Add elements to LinkedList
-   		 listaG.add(1);
-   		 listaG.add("Palabra");
-    	 listaG.add(2);
-    	 listaG.add("Hola");
-    	 listaG.add("Mundo");
-    	 listaG.add(16);
-    	 listaG.add(23);
-    	 listaG.add(69);
-    	 listaG.add(30);
-    	 listaG.add(2);
-    	 listaG.add(8);
-    	 listaG.add(17);
+   		 listaG.add("2");
+    	 listaG.add("hola");
+    	 listaG.add("3");
     	
 	
 		System.out.println("\nArreglo desordenado:");
@@ -45,9 +36,8 @@ public class BubblesortList {
 		bubblesortList(listaG);
 		
 		System.out.println("\nArreglo ordenado:");
-    	//System.out.println("LinkedList: " + bubblesortList(listaG));
-        for(int i = 0; i < listaG.size(); i++) {
-            System.out.println(listaG.get(i));
-        }
+		System.out.println("LinkedList: " + listaG);
+
+		System.out.println();
   }
 }

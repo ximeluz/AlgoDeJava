@@ -30,9 +30,9 @@ public class Ordenamiento {
      * @param l La lista que se ordenara.
      */
 	public static <T extends Comparable<T>> void bubblesort(List<T> l) {
-		for(int i = 1; i < size(); i++) {
-			for(int j = 0; j < size() - i; j++) {
-				if(l.get[j] > l.get[j + 1]) {
+		for(int i = 1; i < l.size(); i++) {
+			for(int j = 0; j < l.size() - i; j++) {
+				if(l.get(j).compareTo(l.get(j + 1)) > 0) {
 					intercambia(list, j, j+1);
 				}
 			}
@@ -47,7 +47,15 @@ public class Ordenamiento {
      * @param l La lista que se ordenara.
      */
 	public static <T extends Comparable<T>> void selectionsort(List<T> l) {
-		// Les toca
+		for(int i = 0; i < l.size(); i++){
+			int min = i;
+            for(int j = i; j < l.size(); j++) {
+				if(l.get(j).compareTo(l.get(min)) < 0) {
+                    min = j;
+                }
+            }        
+            intercambia(l, i, min);
+        }
 	}
 
 	/**
@@ -68,7 +76,32 @@ public class Ordenamiento {
 	 * fin - Indice que indica el final de la sublista.
 	 */
 	private static <T extends Comparable<T>> void quicksort(List<T> l, int ini, int fin) {
-		// Les toca
+		//Caso la lista tiene una longitud 1 o 0
+		if((fin - ini) < 1)
+            return;
+
+        int p = ini;
+        int i = ini + 1;
+        int j = fin;
+
+		while(i < j) {
+			if(l.get(i).compareTo(l.get(p)) > 0 && l.get(j).compareTo(l.get(p)) <= 0) {
+				intercambia(l, i, j);
+			} else if (l.get(i).compareTo(l.get(p)) < 0) {
+				i++;
+			} else if(l.get(j).compareTo(l.get(p)) < 0) {
+				j--;
+			} else {
+				i++;
+				j--;
+			} 
+		}
+		if(l.get(i).compareTo(l.get(p)) > 0) {
+			i--;
+		}
+		intercambia(l, i, p);
+		QuickSortList(l, ini, i - 1);
+		QuickSortList(l, i + 1, fin);
 	}
 
 	/**
