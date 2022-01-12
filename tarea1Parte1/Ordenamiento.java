@@ -79,7 +79,7 @@ public class Ordenamiento {
 		//Caso la lista tiene una longitud 1 o 0
 		if((fin - ini) < 1)
             return;
-
+//----------------------------------------------
         int p = ini;
         int i = ini + 1;
         int j = fin;
@@ -87,21 +87,22 @@ public class Ordenamiento {
 		while(i < j) {
 			if(l.get(i).compareTo(l.get(p)) > 0 && l.get(j).compareTo(l.get(p)) <= 0) {
 				intercambia(l, i, j);
-			} else if (l.get(i).compareTo(l.get(p)) < 0) {
+			} else if (l.get(i).compareTo(l.get(p)) <= 0) {
 				i++;
-			} else if(l.get(j).compareTo(l.get(p)) < 0) {
+			} else if(l.get(j).compareTo(l.get(p)) > 0) {
 				j--;
 			} else {
 				i++;
 				j--;
 			} 
 		}
+//Caso: ambos apuntadores apuntan al mismo elemento
 		if(l.get(i).compareTo(l.get(p)) > 0) {
 			i--;
 		}
 		intercambia(l, i, p);
-		QuickSortList(l, ini, i - 1);
-		QuickSortList(l, i + 1, fin);
+		quicksort(l, ini, i - 1);
+		quicksort(l, i + 1, fin);
 	}
 
 	/**

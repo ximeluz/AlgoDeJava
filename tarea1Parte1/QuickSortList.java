@@ -40,9 +40,9 @@ public class QuickSortList {
 		while(i < j) {
 			if(l.get(i).compareTo(l.get(p)) > 0 && l.get(j).compareTo(l.get(p)) <= 0) {
 				intercambia(l, i, j);
-			} else if (l.get(i).compareTo(l.get(p)) < 0) {
+			} else if (l.get(i).compareTo(l.get(p)) <= 0) {
 				i++;
-			} else if(l.get(j).compareTo(l.get(p)) < 0) {
+			} else if(l.get(j).compareTo(l.get(p)) > 0) {
 				j--;
 			} else {
 				i++;
@@ -63,9 +63,9 @@ public class QuickSortList {
         LinkedList<Integer> listaG = new LinkedList<Integer>();
 
          // Add elements to LinkedList
-         //listaG.add(20);
          listaG.add(1);
-         //listaG.add(100);
+         listaG.add(2);
+         listaG.add(3);
 
 
         System.out.println("\nArreglo desordenado:");

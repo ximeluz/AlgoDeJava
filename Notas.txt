@@ -25,3 +25,9 @@ EJEMPLO: clase Perro
 * Cuando una clase B extiende a una clase A. La clase B va a recibir TODOS los atributos y métodos no privados de A.
 * Los métodos heredaros se pueden sobre-escribir, i.e. modificar de acuerdo a la nueva clase A.
 * Una clase unicamente puede extender de una clase a la vez.
+
+Metodo compareTo:
+
+*Devuelve 0 si ambas cadenas son iguales.
+*Devuelve un valor menor que cero si la cadena es menor que la otra cadena (menos caracteres)
+*Devuelve valor mayor que 0 si la cadena es mayor que la otra cadena (más caracteres).
