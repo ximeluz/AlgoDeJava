@@ -19,7 +19,15 @@ public class Busqueda {
      * @return La posicion del elemento o -1 si no o encuentra.
      */
 	public static <T extends Comparable<T>> int busquedaLineal(List<T> l, T e) {
-		// Les toca
+		// Checar elemento por elemento
+		for(int i = 0; i < l.size(); i++) {
+		// Si encuentra el elemento buscado entonces lo regresa
+			if(l.get(i).compareTo(e) == 0) {
+				return i;
+			}
+		}
+//Si no encuentra el elmento buscado regresa -1
+		return -1;
 	}
 
 	/**
@@ -43,6 +51,19 @@ public class Busqueda {
      * fin - Indice que indica el final de la sublista.
 	 */
 	private static <T extends Comparable<T>> int busquedaBinaria(List<T> l, T e, int ini, int fin) {
-		// Les toca
+		// Caso base (Me salí de mi lista)
+		if (fin < ini) {
+			return -1;
+		} else {
+			int mitad = (ini + fin) / 2;
+			if(l.get(mitad).compareTo(e) > 0) {
+				return busquedaBinaria(l, e, 0, mitad - 1);
+             }
+             else if (l.get(mitad).compareTo(e) < 0) {
+				return busquedaBinaria(l, e, mitad + 1, fin);
+             } else {
+                    return mitad;
+			 }
+		}
 	}
 }
