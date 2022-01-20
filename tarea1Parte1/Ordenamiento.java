@@ -135,7 +135,7 @@ public class Ordenamiento {
 
 //subconjuntos de subconjuntos
         izq =  mergesort(izq);
-        der =  mergesortlist(der);
+        der =  mergesort(der);
 
 //Mezcla
         return mezcla(izq, der);
